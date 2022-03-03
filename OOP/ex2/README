@@ -1,0 +1,37 @@
+evyatar613
+
+
+=============================
+=      File description     =
+=============================
+SpaceShip -contains the main mthod of my program , i make the SpaceShip calss my super class for all of the other space ships, in this calss i have most of the code
+HumenShip - a sub class of the SpaceShip class, in the class the player can play as aspace ship, he can move , shoot , active shield and teleport
+RunnerShip - a subclass of the SPace shipclass this ship try to run away from the other ships  the ship does this by taking the angle and the distance from other ships
+BasherShip - asub class of the Space ship classin this class the ship try to bash the closest ship when she is close she can activate the shield
+AggresiveShip - subclass of the SpaceShip class this ship try follow and destory the close ship she shoot when she get close to the other ship
+DrunkardShip - this ship act like an angry drunk driver , she don move staight she move in randoms directions and she shoot at random ships also she activate the shield in random times     
+Special - this ship is a very wierd ship she move in teleport and in circules ', and she add health to her health every 15 round so to kill her is realy hard.
+SpaceShipFactory - this class make our ship in the game , we add the names of the ships we want in the game and this class add them to the game
+
+=============================
+=          Design           =
+=============================
+– Extensibility - in my program the SpaceShip class do all the hard work and she is the super class for all of the ships so if 
+i want to add somthing to all of my ship i can easly do so, also if i want to add new type of SpaceShips i can do this by add new sub class of the SpaceShipclass
+Modularity - my program divide by classes ,each calss have his 
+uniqe purpose the Spaceship class and his subclass represent ships in the game , the SpaceShipfactory 
+create the spaceShip in the game and the SpaceWars run the game
+Intuitiveness and understandability - i think my code is very logical like i wrote erly the code i
+ divide by class in each one have other actions in the program , also i can take one class in my code and i can still work in other game of space ships
+i choose the Space ship class to be the super class of all of the space ship , 
+i did this because the ships have a lot of thing in cummon also i choose th doAction method in the Space Ship class to be an abstact method
+  
+============================
+=  Implementation details   =
+=============================
+in the SpaceShip Factory i used for loop to go over all of the names of the ship and i create another loop to add all of the ships to the game
+i make the parameters in spaceShip to private or if the parameter or method is usable in the sub classes i make them to protected to make the API as minimal as possiable ,
+
+=============================
+=    Answers to questions   =
+=============================

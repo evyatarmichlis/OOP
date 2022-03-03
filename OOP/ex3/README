@@ -1,0 +1,102 @@
+evyatar613
+
+=============================
+=      File description     =
+=============================
+SimpleHashSet -   
+an abstract class that represent a simpleHash set  this class will be the base of the other classes i built
+have 2 costracturs (diff and regualr) in the consractor we can change the load factor
+capacity - return the capacity of this hashtable
+getLowerLoadFactor  - get the lower load factor
+getUpperLoadFactor - get the upper load factor
+clamp​ -      Clamps hashing indices to fit within the  current table capacity 
+method i add :
+increaseTableSize 
+decreaseTableSize
+resizeTable - abstract method , every hashtable do other actions
+checkAndResize - resize thr table using the method before
+
+OpenHashSet - hash table how extends the simpleset class . work on link list :
+ every element is add to a diff link list base on his code
+i add a inner class for the buckets of the open hash = FacadeLinkList
+all the other methods are override from the
+ simplehash class exept the resethash = how reset the table
+
+ClosedHashSet - hash table base on one array how can be resize when needed
+(use diffrent hashcode to find and add elements)
+StringAndFlag - inner class to the closehash i create this for delete values 
+- this contain  a string and a flag how tell us if the item is deleted
+if the item is deleted we will not be add to the next resize
+
+CollectionFacadeSet  -class of the 
+facade set  we can use this class to do action on any collection with string type
+the facade implement the simpeset so every method is 
+override to work collections with stirng
+
+PerformanceAnalysis - this class check the time 
+of different actions on different data stractors
+i write the results in the result file
+
+=============================
+=          Design           =
+=============================
+i tryed to use the simplehashset at the most so every class that needed in every hash table{like clamp)
+ is in the simple hash
+the open set is a class of link list i wrote a inner class inside the class to use the collection in my open set
+the close set is a class of stringwithflags 
+this is also a inner class i wrote because i need string with boolieans* more in the qestions
+the CollectionFacadeset is a class with the abillty to warp every collection and use him
+this create a very easy use in diffrent collection
+
+============================
+=  Implementation details   =
+=============================
+simplehashset - method that are useable in every hashtable
+openset- list of link list with iterator
+closeset - list of string withbooliean
+when we need to resize we add all the relevent 
+elements from the old table to a new table
+
+=============================
+=    Answers to questions   =
+=============================
+
+how to delete in the close hash' ?
+because we cant just remove the item from the list an place null ( as you expian in the ex4 ) and we cant put the word 
+"delete"( or any other string) because after that i wont be able to add the word delete so i mae the close hash to be a new array ; 
+i wrote a iinerclass of Sring and flags that every string have a booliean that show us if the item is deleted or not
+ , also when we resize the table the item will be remove from the new resize table 
+
+Discuss the results of the analysis in depth:
+the openHashset had a very poor results in the data1 it took a very long time to initail the data1 
+an also he got very poor results in the negative number
+the close hash set work better from his friend but stiil he tool a very long time in the initail of data 1
+
+– Summarize the strengths and weaknesses of each of the data structures as reflected by
+the results. Which would you use for which purposes?
+linkList - i will never use this structur . he got the worst time on almost every parameter
+hashset - he have good time every time so if i dont know what the purpose i will choose him
+i can also use the treeset- he work well but not as good as the hash set
+ if i got a data like data 2 how spread on all of the structor 
+i can use open/close because they got good results of data 2 test
+if i need to check contain on a string how have the same hashcode 
+as all the others i can use the close hash
+if i know item s exist and the data is spread on all of the strucator i can use the open hashset
+
+How did your two implementations compare between themselves?
+the two have similar results on most of the test but in the negative number test the open
+ had very vad result so if i need to find a stirng with the same code as all 
+the others and the data is like data1(spread inequal) i will choose the close one
+
+How did your implementations compare to Java’s built in HashSet?
+hash set have very good results in every test.
+he "lost" to my implement only in the last test
+
+Did you find java’s HashSet performance on data1.txt surprising? Can you explain it?
+yes. the hashset work on probing like our close set so why he is so fast
+ i think this is because the hashset deal better from our own closeset in the collisuon 
+i think he dont colide withe as many items like our close set ?
+
+
+
+

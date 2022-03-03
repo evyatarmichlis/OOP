@@ -1,0 +1,35 @@
+evyatar613
+
+
+=============================
+=      File description     =
+=============================
+Library.java- contains the Library class and the main method of the program
+Book.java - implements the Book class - .
+Patron.java - implement of the patron class
+
+
+
+=============================
+=          Design           =
+=============================
+I implemented the class acording to their function ':
+ the book class represent areal book we can take from any library,
+ the patron represent any patron from any l
+ibrary so each class stand alone and can work for diffrent classes
+
+
+
+=============================
+=  Implementation details   =
+=============================
+in the library class i used java arrays to store all the diffrent books and patrons 
+i also used the index of the arry as id to the books .
+when i took a book i changed his id to the partron id so i can know if the book is taken
+
+
+
+
+=============================
+=    Answers to questions   =
+=============================
